@@ -42,10 +42,22 @@ public interface TableMapper {
     void createTbChainContract();
 
     // sub table
-    void createTbBlock(@Param(value = "tableName")String tableName);
+    void createBlockRawData(@Param(value = "tableName")String tableName);
     
-    void createTbTransaction(@Param(value = "tableName")String tableName);
-    
+    void createBlockTaskPool(@Param(value = "tableName")String tableName);
+
+    void createBlockDetailInfo(@Param(value = "tableName")String tableName);
+
+    void createTxRawData(@Param(value = "tableName")String tableName);
+
+    void createTxReceiptRawData(@Param(value = "tableName")String tableName);
+
+    void createBlockTxDetailInfo(@Param(value = "tableName")String tableName);
+
+    void createContractInfo(@Param(value = "tableName")String tableName);
+
+    void createDeployAccountInfo(@Param(value = "tableName")String tableName);
+
     // query
     List<String> queryTables(@Param("dbName") String dbName, @Param("tableName") String tableName);
     

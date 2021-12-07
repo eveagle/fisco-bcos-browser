@@ -65,8 +65,15 @@ public class TableService {
         if (groupId == 0) {
             return;
         }
-        tableMapper.createTbBlock(TableName.BLOCK_DATA.getTableName(groupId));
-        tableMapper.createTbTransaction(TableName.TX_DATA.getTableName(groupId));
+        tableMapper.createBlockRawData(TableName.BLOCK_DATA.getTableName(groupId));
+        tableMapper.createBlockTaskPool(TableName.TASK_POOL.getTableName(groupId));
+        tableMapper.createBlockDetailInfo(TableName.BLOCK_DETAIL.getTableName(groupId));
+        tableMapper.createTxRawData(TableName.TX_DATA.getTableName(groupId));
+        tableMapper.createTxReceiptRawData(TableName.RECEIPT_DATA.getTableName(groupId));
+        tableMapper.createBlockTxDetailInfo(TableName.TX_DETAIL.getTableName(groupId));
+        tableMapper.createContractInfo(TableName.CONTRACT_INFO.getTableName(groupId));
+        tableMapper.createDeployAccountInfo(TableName.ACCOUNT_INFO.getTableName(groupId));
+
     }
     
     /**
